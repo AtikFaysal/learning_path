@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jetpack Compose/Side Effects.md",
+                "file": "Android/Jetpack Compose/Side Effects.md",
                 "mode": "source",
                 "source": false
               },
@@ -162,8 +162,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c0b58f8a9eb9de8",
+  "active": "38b7b26435836c27",
   "lastOpenFiles": [
+    "Android",
     "Jetpack Compose/Side effect.md",
     "Jetpack Compose/Side Effect.md",
     "Jetpack Compose/Untitled.canvas",
@@ -171,7 +172,7 @@
     "Jetpack Compose.md",
     "Untitled.canvas",
     "Welcome.md",
-    "Jetpack Compose",
+    "Android/Jetpack Compose",
     "2024-10-21.md",
     "declarative UI.md",
     "create a link.md"
