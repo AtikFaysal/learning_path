@@ -19,25 +19,32 @@
 **Kotlin**
 - Data class
 - Sealed class
+  
 **Data structure**
+
 **Algorithm**
+
 **Problem solving**
+
 **Object oriented programing**
 - Interface
 - Inheritance
 - Abstraction
 - Polymorphism
 - Encapsulation
+
 **Software development principle**
 - SOLID principle
 - YAGNI principle
 - DRY principle
+  
 **Android architecture**
 - MVVM
 - MVP
 - MVVM vs MVP
 - Clean architecture
 - Software architecture vs Software design
+  
 **Core**
 - JVM
 - JRE
@@ -46,7 +53,11 @@
 - Gradle
 - Compiler
 - Interpreter
+  
 **CI/CD**
+
 **Swift**
+
 **SwiftUi**
+
 **Git & Github**
