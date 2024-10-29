@@ -73,3 +73,46 @@ In short, side effects help streamline operations, prevent repetitive or wastefu
 - rememberUpdatedState
 
 **LaunchedEffect**
+`LaunchedEffect` in jetpack compose is a side-effect function designed to run a block of code within a coroutine when certain conditions are met, specially when the composable is first added to the composition tree or when its dependencies are change. This function is particularly useful for running asynchronous or one-time operations ties to the lifecycle of a composable, such as fetching data, starting animation, or handling one-time events.
+
+**Key feature of LaunchedEffect**
+1. `Runs only once`: 
+- When `LaunchedEffect` is provided a key or a dependencies, it executes its block of code only when this key changes. For example, if you pass `Unit` as the key, the effect will run only once when the composable enters the compositions.
+-  By adding a dependency, it will run each time the dependency changes, making it ideal for running task that need to re-trigger based on specific state changes.
+2.  `Runs on the composables' couroutine scope`:  `LaunchedEffect` runs its code block on the composable's scope, which automatically cancels the coroutine when the composable is removed from the composition. This lifecycle awareness prevents resources leaks and unnecessary background tasks when the composable is no longer needed.
+3. `Safe for asynchronus task`: `LaunchedEffect` is a suspendable function, so you can safely perform asynchronous task(like network call) without blocking UI thread.
+
+**What LaunchedEffect does**
+- Launces a coroutine in the background to perform your desired side effect.
+- Ensures the coroutine starts only when the composable composition occurs.
+- Cancels the coroutine automatically when the composable's is removed from the composition.
+- Allows specifying dependencies to control the coroutine execution based on changes in data or state.
+
+**Benefits of using LaunchedEffect**
+- Ensures asynchronous task are ties to the composable lifecycle. 
+- Prevent redundant recompositions or repeated call by controlling when the code executed. 
+- Automatically cancels tasks if the composables leaves the composition, managing resources effectively.
+- Simplifies the handling of one-time events and state change in composable.
+
+**Usage of LaunchedEffect**
+```
+@Composable
+fun WelcomeScreen(viewModel: WelcomeViewModel) {
+    val userData by viewModel.userData.observeAsState()
+
+    // LaunchedEffect with Unit as the key, so it runs only once when the composable enters composition
+    LaunchedEffect(Unit) {
+        viewModel.loadUserData() // Load user data only when this screen is first displayed
+    }
+
+    Column {
+        Text(text = "Welcome, ${userData?.name ?: "Guest"}")
+    }
+}
+```
+
+==Note== 
+- `LaunchedEffect` should not directly update the UI state. Use composable state updates like `useState` to ensure proper recomposition.
+- Avoid nesting complex logic within `LaunchedEffect`. Consider separate suspend functions for organization and clarity.
+
+**rememberCoroutinesScope**
