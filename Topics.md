@@ -45,4 +45,7 @@
 **CI/CD**
 **Swift**
 **SwiftUi**
+**Dart**
+**Flutter**
+
 **Git & Github**

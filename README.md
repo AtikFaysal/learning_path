@@ -14,7 +14,6 @@
 - Push notification
 - Jetpack library
 - Dependency Injection(DI) Hilt and Coin
-
   
 **Kotlin**
 - Data class
@@ -59,5 +58,9 @@
 **Swift**
 
 **SwiftUi**
+
+**Dart**
+
+**Flutter**
 
 **Git & Github**

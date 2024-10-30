@@ -111,8 +111,102 @@ fun WelcomeScreen(viewModel: WelcomeViewModel) {
 }
 ```
 
-==Note== 
+<mark>Note</mark>
 - `LaunchedEffect` should not directly update the UI state. Use composable state updates like `useState` to ensure proper recomposition.
 - Avoid nesting complex logic within `LaunchedEffect`. Consider separate suspend functions for organization and clarity.
 
 **rememberCoroutinesScope**
+`rememberCoroutineScop` in jetpack compose provides a `CoroutineScope` tied to the lifecycle of a composable. This allows you to launch coroutines safely from within composables, enabling actions like handling user interactions or triggering UI updates without being tied to a specific `LaunchedEffect` or recomposition. Unlike `LaunchedEffect`, `rememberCoroutineScope` does not automatically cancel coroutines when dependencies change or the screen recomposes, so you manage the coroutine's lifecycle more directly. 
+
+**Why use rememberCoroutineScope**
+- `Triggering coroutines on user action`: It's ideal for handling events that happen based on user action rather than being tied to the lifecycle of the composable.
+- `Launching coroutines outside of the LaunchedEffect`: `LaunchedEffect` automatically restart when key changes, which is not always needed. With `rememberCoroutineScope` you can trigger one-off events without restarting coroutines.
+- `More control over coroutine lifecycle`: `remeberCoroutineScope` persists across recompositions, it's useful for event that need to maintain state even as the UI re-renders.
+
+**Usage of rememberCoroutineScope**
+```
+@Composable
+fun SaveDataScreen(viewModel: DataViewModel) {
+    val coroutineScope = rememberCoroutineScope()
+    var isSaving by remember { mutableStateOf(false) }
+
+    Button(onClick = {
+        // Launch a coroutine on button click to save data
+        coroutineScope.launch {
+            isSaving = true
+            viewModel.saveData()
+            isSaving = false
+        }
+    }) {
+        Text(if (isSaving) "Saving..." else "Save Data")
+    }
+}
+```
+
+<mark>Note</mark>
+- `Lifecycle awarness`: The `CoroutineScope` created by `rememberCoroutineScope` is tied to the composable's lifecycle. When the composable leaves the composition the scop will canceled, avoiding potential memory leaks.
+- `Avoiding automatic cancellation`: Unlike `LaunchedEffect`, the coroutine in `rememberCoroutineScop` does not cancel on recompositions, which makes it suitable for actions tied to specific events like user interactions
+- `Manual cancelation`: If you need fine-grained control over the coroutine's lifecycle, you may still need to manage cancellation manually using `Job` or `MutableState` if the coroutine need to be stopped prematurely.  
+
+**LaunchedEffect Vs rememberCoroutineScope**
+Both `LaunchedEffect` and `rememberCoroutineScope` are tools in Jetpack Compose for launching coroutines, but they serve different purposes and are suited to different use cases. Here’s a breakdown of the differences, benefits, and when to use each.
+
+1. `Lifecycle & depedency awarness`:
+	- `LaunchedEffect`
+		- Tied directly to the composable's lifecycle
+		- Automatically cancels and restarts the coroutines when dependencies or keys change.
+		- Best for task that need to react to lifecycle changes or dependencies changes within a composable.
+	- `rememberCoroutineScope`
+		- Not automatically linked to any lifecycle dependency.
+		- Persists across recompositions without being restarted, allowing you to launch coroutines without worrying about dependency changes.
+		- Ideal for user-initiated actions that don't need to automatically restart on recomposition.
+2. `Use case scenarios`:   
+	 - `LaunchEffect`
+		 - For side effects that should start and stop automatically with the composable lifecycle, or when specific keys change.
+		 - `Example`: Loading data when a screen appears, where data needs to reload if the screen reappears or if the data source changes.
+	- `rememberCoroutineScope`:
+		- For actions that happen based on events, like button clicks, where you want more control and don't want automation cancellation or re-triggering on recompositions.
+		- `Example`: A user clicks a button, triggering a CRUD operation on database
+3. `Automatic cancellation & re-triggering`:
+	- `LaunchedEffect`
+		- Cancels any running coroutine whenever the composable is removed from the composition or a dependency key changes, ensuring no redundant tasks continue in the background.
+		- This makes `LaunchedEffect` ideal for lifecycle-dependent actions where you don’t want background tasks running when the composable is inactive.
+	- `rememberCoroutineScope`
+		- The coroutine is not automatically canceled on recompositions. It is, however, canceled when the composable is permanently removed from the composition.
+		- This makes it ideal for tasks that should continue despite recompositions, like tasks triggered by user interactions
+4. `Code example`
+- `LaunchedEffect`
+```
+@Composable
+fun ProfileScreen(userId: String, viewModel: ProfileViewModel) {
+    val userProfile by viewModel.userProfile.observeAsState()
+
+    LaunchedEffect(userId) {
+        viewModel.loadUserProfile(userId)
+    }
+
+    // UI to display the profile
+    Text(text = userProfile?.name ?: "Loading...")
+}
+```
+- `rememberCoroutineScope`
+```
+@Composable
+fun SaveButton(viewModel: ProfileViewModel) {
+    val coroutineScope = rememberCoroutineScope()
+    var isSaving by remember { mutableStateOf(false) }
+
+    Button(onClick = {
+        coroutineScope.launch {
+            isSaving = true
+            viewModel.saveProfile()
+            isSaving = false
+        }
+    }) {
+        Text(if (isSaving) "Saving..." else "Save")
+    }
+}
+```
+
+5. `Summary`
+	| Feature
