@@ -209,4 +209,11 @@ fun SaveButton(viewModel: ProfileViewModel) {
 ```
 
 5. `Summary`
-	| Feature
+
+| `Feature`              | `LaunchedEffect`                             | `rememberUpdateCoroutine`                       |
+| ---------------------- | -------------------------------------------- | ----------------------------------------------- |
+| Best fore              | Lifecycle-aware side effects                 | User-initiated actions                          |
+| Lifecycle tied to      | Composable lifecycle, with dependency keys   | Composable, but not tied to dependency keys     |
+| Recomposition behavior | Cancels and re-launches on dependency change | Persists across recompositions                  |
+| Automatic cancellation | On key change or when composable exits       | Only when composable exits composition          |
+| Ideal use case         | Loading data when a screen appears           | Handling button clicks or user-triggered events |
