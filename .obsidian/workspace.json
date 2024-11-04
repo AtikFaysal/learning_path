@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Android/Jetpack Compose/Side Effects.md",
+                "file": "Flutter/Dart/Variables.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Side Effects"
+              "title": "Variables"
             }
           }
         ],
@@ -92,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "2d70102b7bc3405c",
@@ -175,7 +175,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,8 +190,12 @@
   },
   "active": "5b3454a3ae5b94e3",
   "lastOpenFiles": [
-    "README.md",
+    "Flutter/Dart/Learning path.md",
+    "Flutter/Dart/Variables.md",
     "Android/Jetpack Compose/Side Effects.md",
+    "Flutter/Dart",
+    "Flutter",
+    "README.md",
     "Topics.md",
     "Android",
     "Jetpack Compose/Side effect.md",
