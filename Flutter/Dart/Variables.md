@@ -17,8 +17,24 @@ Variable are containers used to store value in the program. There are different 
 
 `Basic declaration`
 ```
-String greeting = 'Hello, Atik Faysal!'; //basic declaration of a string 
-print(greeting); // Output: Hello, Atik Faysal!
+void main() {   
+   String text1 = 'Example of a single-line string.';   
+   String text2 = "Example of a single line string using double quotes.";   
+   String text3 = """This is a multiline line   
+string using the triple-quotes.
+This is tutorial on dart strings.
+""";   
+   print(text1);  
+   print(text2);   
+   print(text3);   
+
+	//output
+	//Example of a single-line string.
+	//Example of a single line string using double quotes.
+	//This is a multiline line   
+	//string using the triple-quotes.
+	//This is tutorial on dart strings.
+}
 ```
 
 `Var string declaration`
