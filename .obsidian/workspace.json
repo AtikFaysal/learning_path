@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Flutter/Dart/Collections.md",
+                "file": "Flutter/Dart/Function.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Collections"
+              "title": "Function"
             }
           }
         ],
@@ -120,7 +120,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 394.5
   },
   "right": {
     "id": "2d70102b7bc3405c",
@@ -218,11 +218,11 @@
   },
   "active": "21aebf6a91646239",
   "lastOpenFiles": [
-    "Flutter/Dart/Learning path.md",
     "Flutter/Dart/Collections.md",
+    "Flutter/Dart/Operators, Control Flow.md",
+    "Flutter/Dart/Learning path.md",
     "Flutter/Dart/Function.md",
     "Flutter/Dart/Variables.md",
-    "Flutter/Dart/Operators, Control Flow.md",
     "conflict-files-obsidian-git.md",
     "Android/Jetpack Compose/Side Effects.md",
     "Flutter/Dart",

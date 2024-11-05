@@ -285,3 +285,11 @@ void main() {
   performOperation(10, 5, printOperation); // Output: Result with 5 is: 15
 }
 ```
+
+`Lexical scope`
+
+`Lexical closures`
+
+`Tear-offs`
+
+`External function`

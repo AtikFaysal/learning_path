@@ -112,7 +112,7 @@ By following this learning path, you’ll gradually build a strong foundation in
 - Variable - Done
 - Operators (Left shift, right shift, XOR)
 - Record parameter - done
-- Collections(List, map, set, where)
+- Collections(List, map, set, where) - Done
 - Generics 
 - Functions - Done
 - Sealed class 
