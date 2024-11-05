@@ -12,6 +12,8 @@ Variable are containers used to store value in the program. There are different 
 - `var`: For storing any value. E.g. ‘Bimal’, 12, ‘z’, true. Dart compiler automatically infers the type of the variable based on the initial assigned value
 - `const`: For storing constant value E.g(pie 3.14) compile time variable 
 - `final`: For storing constant value E.g(pie 3.14) runtime variable
+- `dynamic`: For storing any kind of value, and allow to change the type of the value assigned to it.
+- `Object`: For storing any kind of value like dynamic, but we can't directly call methods on an *Object* variable without type casting, as it doesn't bypass type check.
 
 **String variable example**
 
@@ -226,4 +228,198 @@ print(age); // Output: 25
 ```
 final currentDate = DateTime.now(); // Allowed, as it’s evaluated at runtime
 // const compileTime = DateTime.now(); // Error, `const` can't be assigned at runtime
+```
+
+**dynamic**
+>`dynamic` type is a special type that can hold any kind of value and allow to change the type of the value assigned to it. When a variable is declared with the `dynamic` type, it bypasses Dart's type checking, meaning we can assign values of any type to it at runtime
+
+`Example`
+```
+void main() {
+	dynamic value = 'Hello';  // Initially a String
+	print(value);             // Output: Hello
+	  
+	value = 42;               // Now an int
+	print(value);             // Output: 42
+	  
+	value = true;             // Now a bool
+	print(value);             // Output: true
+
+	printValue('Hello'); // Output: The value is Hello 
+	printValue(42); // Output: The value is 42 
+	printValue(true); // Output: The value is true
+}
+
+void printValue(dynamic value) { 
+	print('The value is $value'); 
+}
+```
+
+**Object**
+>`Object?` is the root of all types in Dart, and like `dynamic`, it can hold any type of value. However, unlike `dynamic`, you can’t directly call methods on an `Object?` variable without casting, as it doesn’t bypass type checks.
+
+`Example`
+```
+Object? value = 'Hello';
+print((value as String).length); // Safe with casting
+```
+
+**Records**
+> `records` allow to group multiple values together without creating a custom class. It's useful for holding related data in a lightweight and concise way. `recors` can be used as parameters in functions, making it easy to pass grouped values.
+
+`record as parameter`
+```
+//positional record parameter  
+(String, int, double) record;  
+record = ("Atik", 29, 5.4);//position matters  
+//record1 = (29, "Atik", 5.4); //Wrong  
+  
+(int a, int b) recordA = (1, 2);  
+(int x, int y) recordX = (3, 4);  
+recordA = recordX; // OK.  
+  
+//named record parameter  
+({String name, int age, double height}) person;  
+person = (age: 29, name: "Atik", height: 5.4);//Right, parameter position doesn't matter here  
+  
+({int a, int b}) recordAB = (a: 1, b: 2);  
+({int x, int y}) recordXY = (x: 1, y: 2);  
+  
+//recordXY = recordAB;// Compile error! These records don't have the same type.  
+print(recordXY == recordAB);//output false  
+  
+var recordFields = ('first', a: 2, b: true, 'last');  
+  
+print(recordFields.$1); // Prints 'first'  
+print(recordFields.a); // Prints 2  
+print(recordFields.b); // Prints true  
+print(recordFields.$2); // Prints 'last'
+```
+
+`Example: positional record as parameter`
+```
+void main(){  
+  var record = ("Atik", 29);  
+  positionalRecordParameter(record);  
+}
+
+void positionalRecordParameter((String, int) record){  
+  print("Name: ${record.$1} and age: ${record.$2}");  
+}
+```
+
+`Example: Named record as parameter`
+```
+void main(){  
+  var record = (name: "Atik", age: 29);  
+   var record = ("Atik", 29); //Wrong 
+  namedRecordParameter(record);  
+}
+
+void namedRecordParameter(({String name, int age}) record){  
+  print("Name: ${record.name} and age: ${record.age}");  
+}
+```
+
+`Example: Mixed(Named & Positional) parameter`
+```
+void main(){   
+  var record = ("Hello: ", (name: "Atik Faysal", age: 30), "Dhaka");  
+  mixedNamedPositionalParameter(record);  
+}
+
+void mixedNamedPositionalParameter((String, ({String name, int age}), String) record) {  
+  // Accessing fields in the record  
+  var first = record.$1; // First positional element (String)  
+  var namedName = record.$2.name; // Named parameter 'name' in the second element  
+  var namedAge = record.$2.age; // Named parameter 'age' in the second element  
+  var third = record.$3; // Last positional element (String)  
+  
+  print('First: $first, Name: $namedName, Age: $namedAge, Third: $third');  
+}
+```
+
+`Return a Mixed record`
+```
+(String, ({String name, int age}), String) returnMixedRecord(){  
+  var record = ("Hello: ", (name: "Atik Faysal", age: 30), "Dhaka");  
+  return record;  
+}
+
+void main() {
+  var record = returnMixedRecord();  
+  print('First: ${record.$1}, Name: ${record.$2.name}, Age: ${record.$2.age}, Third: ${record.$3}');
+}
+```
+
+**Null safety**
+> `Null safety` is a feature that helps prevent null reference errors, making code more robust and reducing runtime error.
+
+`Non-Nullable types`: By default all variable is non null
+```
+int number = 5;
+//number = null; //this is wrong and null safety prevent this
+```
+
+`Nullable types`: To declare a nullable variable add `?` after the data type. This indicates that the variable may hold a null value.
+```
+int? number = 10;
+String? name = "Atik";
+number = null;//Allowed because of the ? suffix
+```
+
+`Late keywords`: `late` keyword is used to tell that a non nullable variable will assigned later, but must assigned before it is accessed. This is useful when a variable can not be initialized at the time of declaration.
+```
+void main() {
+  late int number;
+  number = 10;
+  print(number);
+}
+```
+
+**Null aware operators**
+`(?.)` `Null aware access`: Calls a method or access a property only if the object is non-null
+```
+String? name = "atik";
+print(name?.length);//Print null instead of throwing an error
+```
+
+`(??) if null operator`: Provides a default value if the left side operand is null.
+```
+  String? name;
+  print(name ?? "Atik faysal");
+```
+
+`(??=) if null assignment`: Assign a value only if the variable is currently null
+```
+  String? name;
+  name ??= "Atik";
+  print(name);
+```
+
+`(!) null assertion`: A nullable variable is non-null at this point. Use this carefully as it can lead to runtime errors if the variable is actually null.
+```
+  String? name = "Atik";
+  print(name!);
+}
+```
+
+`Example: Null safety in functions`:
+```
+void greet(String? name) {
+  print('Hello, ${name ?? 'Guest'}');
+}
+
+void main() {
+  greet(null);  // Output: Hello, Guest
+  greet('Alice'); // Output: Hello, Alice
+}
+```
+
+`Example: Null values in collections`:
+```
+void main() {
+  List<int?> nullableList = [1, 2, null, 4]; // List of nullable integers
+  List<int> nonNullableList = [1, 2, 3, 4]; // List of non-nullable integers
+}
 ```

@@ -106,3 +106,25 @@
 - **Courses**: Platforms like Udacity, Udemy, and Coursera offer structured Dart courses.
 
 By following this learning path, you’ll gradually build a strong foundation in Dart, preparing you to dive into advanced projects and Flutter development confidently.
+
+
+**Dart topics**
+- Variable - Done
+- Operators (Left shift, right shift, XOR)
+- Record parameter - done
+- Collections(List, map, set, where)
+- Generics 
+- Functions - Done
+- Sealed class 
+- If case - Done
+- Pattern matching, Destructuring
+- Class and  Constructor- Singleton (Pattern)
+- Factory method 
+- Mixin ,abstract class, abstract interface
+- Method overloading and overriding (operator overloading)
+- Extension type 
+- Async, await 
+- Isolate 
+- Null safety - Done
+- Stream, Stream builder, stream controller 
+- Rx dart

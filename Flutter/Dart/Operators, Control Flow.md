@@ -238,3 +238,26 @@ void main() {
     }   
 }  
 ```
+
+**If-case**
+> The if-case statement provides a way to perform pattern matching within an `If` statement
+
+`Syntax`
+```
+if (value case pattern) {
+  // Code to execute if the pattern matches
+} else {
+  // Code to execute if the pattern doesn't match
+}
+```
+
+`Example if-case pattern matching`
+```
+void main() {
+  var user = ("Atik", 30, "Dhaka");
+  
+  if(user case (String name, int age, String address))
+    print("pattern match\ndata: ${user.$1}, $age, $address");
+  else print("pattern does not mattch");
+}
+```
