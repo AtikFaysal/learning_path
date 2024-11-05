@@ -162,6 +162,11 @@ void main() {
 `Arrow functions`
 >Dart has special syntax for functions whose body is only one line. Consider the following function named `add` that adds two numbers together: 
 
+`Syntax`
+```
+ReturnType FunctionName(Parameters...) => Expression;
+```
+
 ```
 int add(int a, int b){
   return a + b;
@@ -175,4 +180,108 @@ void main() {
 - Since the body is only one line, you can convert it to the following from:
 ```
 int add(int a, int b)=> a + b;
+```
+
+`Anonymous function`
+`Syntax`
+```
+(parameterList){
+// statements
+}
+```
+
+`Example`
+```
+void main() {
+// Anonymous function
+  var cube = (int number) {
+    return number * number * number;
+  };
+
+  print("The cube of 2 is ${cube(2)}");
+  print("The cube of 3 is ${cube(3)}");
+}
+```
+
+`Extension function`
+>**extension functions** allow you to add new methods or properties to existing classes without modifying their source code.
+```
+extension <extension name>? on <type> {  
+(<member definition>)*  
+}
+```
+
+`Example`
+```
+extension StringExtensions on String {
+  String capitalize() {
+    if (this.isEmpty) return this;
+    return this[0].toUpperCase() + this.substring(1);
+  }
+}
+
+void main() {
+  String name = "dart";
+  print(name.capitalize()); // Output: Dart
+}
+```
+
+`Example`
+```
+extension ListExtensions on List<int> {
+  int get sum => this.fold(0, (prev, element) => prev + element);
+}
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4];
+  print(numbers.sum); // Output: 10
+}
+```
+
+`Higher order function`
+> **Higher-order function** is a function that can take other functions as parameters or return a function as a result. Higher-order functions are useful for creating flexible and reusable code, as they allow you to abstract functionality and pass behaviors dynamically.
+
+`Pasing a function as an argument`
+```
+void printResult(int a, int b, int Function(int, int) operation) {
+  int result = operation(a, b);
+  print("The result is $result");
+}
+
+int add(int x, int y) => x + y;
+int multiply(int x, int y) => x * y;
+
+void main() {
+  printResult(3, 4, add);       // Output: The result is 7
+  printResult(3, 4, multiply);  // Output: The result is 12
+}
+```
+
+`Return a function from another function`
+```
+Function(int) makeAdder(int x) {
+  return (int y) => x + y;
+}
+
+void main() {
+  var addFive = makeAdder(5);
+  print(addFive(3)); // Output: 8
+  print(addFive(10)); // Output: 15
+}
+```
+
+`Callback function example`
+```
+void performOperation(int a, int b, Function(int, int) callback) {
+  int result = a + b;
+  callback(result, b);
+}
+
+void printOperation(int result, int value) {
+  print("Result with $value is: $result");
+}
+
+void main() {
+  performOperation(10, 5, printOperation); // Output: Result with 5 is: 15
+}
 ```
