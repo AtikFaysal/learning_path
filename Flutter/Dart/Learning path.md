@@ -110,7 +110,7 @@ By following this learning path, you’ll gradually build a strong foundation in
 
 **Dart topics**
 - Variable - Done
-- Operators (Left shift, right shift, XOR)
+- Operators (Left shift, right shift, XOR)-done
 - Record parameter - done
 - Collections(List, map, set, where) - Done
 - Generics 
