@@ -31,9 +31,51 @@ void main() {
 >Constructors are special methods in a class used to initialize an object when it’s created. Dart provides both **default constructors** and **custom constructors**.
 
 `Types of constructor`
-- *Generative constructor*
 - *Default constructor*
+- *Generative constructor*
 - *Named constructor*
 - *Factory constructor*
 - *Redirecting constructor*
 - *Constant constructor*
+
+`Default constructor`
+>The constructor which is automatically created by compiler, if you don't create a constructor is called default constructor.
+
+`Example`
+```
+class Person{  
+  var name;  
+  var age;  
+  var address;  
+  Person(){  
+	 //this is a default constructor  
+	 print("Hello person");  
+  }  
+}
+
+void main(){  
+  Person person = Person();  
+}
+```
+
+`Parameterized constructor`
+>*Parameterized constructor* is used to initialize the instance variables of the class. Parameterized constructor is the constructor that takes parameters. It is used to pass the values to the constructor at the time of object creation.
+
+`Example`
+```
+class Person {  
+  var name;  
+  var age;  
+  var address;  
+  Person(this.name, this.age, this.address);  
+  
+  void displayInfo() {  
+    print("Person info: $name, $age, $address");  
+  }}  
+  
+void main() {  
+  Person person = Person("Atik", 29, "Dhaka");  
+  
+  person.displayInfo();  
+}
+```
