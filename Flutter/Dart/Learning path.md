@@ -107,7 +107,6 @@
 
 By following this learning path, you’ll gradually build a strong foundation in Dart, preparing you to dive into advanced projects and Flutter development confidently.
 
-
 **Dart topics**
 - Variable - Done
 - Operators (Left shift, right shift, XOR)-done
@@ -118,7 +117,7 @@ By following this learning path, you’ll gradually build a strong foundation in
 - Sealed class 
 - If case - Done
 - Pattern matching, Destructuring
-- Class and  Constructor- Singleton (Pattern)
+- Class and  Constructor- Singleton (Pattern) - Done
 - Factory method 
 - Mixin ,abstract class, abstract interface
 - Method overloading and overriding (operator overloading)
