@@ -114,13 +114,13 @@ By following this learning path, you’ll gradually build a strong foundation in
 - Collections(List, map, set, where) - Done
 - Generics 
 - Functions - Done
-- Sealed class 
+- Sealed class - done
 - If case - Done
 - Pattern matching, Destructuring
 - Class and  Constructor- Singleton (Pattern) - Done
 - Factory method 
-- Mixin ,abstract class, abstract interface
-- Method overloading and overriding (operator overloading)
+- Mixin ,abstract class, abstract interface - done
+- Method overloading and overriding (operator overloading) - done
 - Extension type 
 - Async, await 
 - Isolate 
