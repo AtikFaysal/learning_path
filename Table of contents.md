@@ -129,10 +129,50 @@
 **Git & Github**
 
 
-| `Topics` | `**Topics**` | Child | Link | Status |
-| :------: | :----------: | ----- | ---- | ------ |
-|  Kotlin  |  Functions   | A     |      |        |
-|          |              | B     |      |        |
-|          |              | C     |      |        |
-|          |              | D     |      |        |
-|          |    Class     | XYZ   |      |        |
+|  `Topics`  |       `Topics`       | Child                          | Link | Status |
+| :--------: | :------------------: | ------------------------------ | ---- | ------ |
+| **Kotlin** | *Class & Interface*  | Class                          |      |        |
+|            |                      | Abstract class                 |      |        |
+|            |                      | Internal class                 |      |        |
+|            |                      | Inner and Nested Classes       |      |        |
+|            |                      | Anonymous Classes              |      |        |
+|            |                      | Data class                     |      |        |
+|            |                      | Sealed class                   |      |        |
+|            |                      | Value class                    |      |        |
+|            |                      | Sealed Interface               |      |        |
+|            |                      | Interface                      |      |        |
+|            |                      | Enum                           |      |        |
+|            |                      | Construction(Private & Public) |      |        |
+|            |                      | Type aliases                   |      |        |
+|            |                      | Inline class                   |      |        |
+|            |                      | Object                         |      |        |
+|            |                      |                                |      |        |
+|            | *Modifier & Keyword* | Public                         |      |        |
+|            |                      | Private                        |      |        |
+|            |                      | Internal                       |      |        |
+|            |                      | Protected                      |      |        |
+|            |                      | Final                          |      |        |
+|            |                      | Inner                          |      |        |
+|            |                      | Inline                         |      |        |
+|            |                      | Open                           |      |        |
+|            |                      | Constant                       |      |        |
+|            |                      | Companion                      |      |        |
+|            |                      | JvmInline                      |      |        |
+|            |                      | JvmStatic                      |      |        |
+|            |                      | Override                       |      |        |
+|            |                      | Tailrec                        |      |        |
+|            |                      | Operator                       |      |        |
+|            |                      |                                |      |        |
+|            |     *Functions*      | Extension function             |      |        |
+|            |                      | Abstract function              |      |        |
+|            |                      | Overridden function            |      |        |
+|            |                      | Inline function                |      |        |
+|            |                      | Lambda function                |      |        |
+|            |                      | Infix function                 |      |        |
+|            |                      | Higher order function          |      |        |
+|            |                      | Suspend function               |      |        |
+|            |                      | Operator function              |      |        |
+|            |                      | Tail-Recursive function        |      |        |
+|            |                      | Synchronized functions         |      |        |
+|            |                      | Static functions               |      |        |
+|            |                      | Scope functions                |      |        |
