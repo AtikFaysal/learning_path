@@ -6,7 +6,6 @@
       {
         "id": "615c9313d12cb623",
         "type": "tabs",
-        "dimension": 60.918674698795186,
         "children": [
           {
             "id": "6c0b58f8a9eb9de8",
@@ -20,23 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "README"
-            }
-          }
-        ]
-      },
-      {
-        "id": "3f5e7ccbb1ae62ef",
-        "type": "tabs",
-        "dimension": 39.081325301204814,
-        "children": [
-          {
-            "id": "1b3948a70509dea4",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
             }
           }
         ]
@@ -95,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "2d70102b7bc3405c",
@@ -191,10 +174,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "38b7b26435836c27",
+  "active": "6c0b58f8a9eb9de8",
   "lastOpenFiles": [
-    "Table of contents.md",
     "README.md",
+    "Table of contents.md",
     "Flutter/Dart/Learning path.md",
     "Flutter/Dart/Polymorphism.md",
     "Flutter/Dart/Class modifiers.md",
