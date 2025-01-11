@@ -203,3 +203,5 @@
 | **Design pattern** | *Factory pattern*            |                                                                      |      |        |
 |                    | *Builder pattern *           |                                                                      |      |        |
 |                    | *Observer Pattern*           |                                                                      |      |        |
+|                    | *Singleton Pattern*          |                                                                      |      |        |
+|                    | *Adapter Pattern*            |                                                                      |      |        |
