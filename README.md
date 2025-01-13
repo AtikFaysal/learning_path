@@ -179,7 +179,7 @@
 |                                    |                                            | Running Kotlin, Java, and scripting languages together in an app.                   |      |        |
 |                                    |                                            |                                                                                     |      |        |
 | **Design pattern**                 | *Factory pattern*                          |                                                                                     |      |        |
-|                                    | *Builder pattern *                         |                                                                                     |      |        |
+|                                    | *Builder pattern*                          |                                                                                     |      |        |
 |                                    | *Observer Pattern*                         |                                                                                     |      |        |
 |                                    | *Singleton Pattern*                        |                                                                                     |      |        |
 |                                    | *Adapter Pattern*                          |                                                                                     |      |        |
