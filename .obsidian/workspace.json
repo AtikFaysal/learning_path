@@ -150,7 +150,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5
+    "width": 347.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -163,7 +164,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "66fe257792254462",
+  "active": "6c0b58f8a9eb9de8",
   "lastOpenFiles": [
     "README.md",
     "Table of contents.md",
