@@ -113,7 +113,7 @@ val evenSquares = (1..1_000_000)
     .map { it * it }
 ```
 
-✅4. **Removing Duplicates While Preserving Order**
+✅ 4. **Removing Duplicates While Preserving Order**
 ```
 fun removeDuplicates(list: List<String>): List<String> {
     val seen = mutableSetOf<String>()
@@ -128,7 +128,7 @@ fun removeDuplicates(list: List<String>): List<String> {
 }
 ```
 
-✅6. **Reading Files Line by Line**
+✅ 5. **Reading Files Line by Line**
 ```
 File("data.txt").useLines { lines ->
     for (line in lines) {
