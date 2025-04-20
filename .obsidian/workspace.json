@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "615c9313d12cb623",
+        "id": "3d513a25512c032f",
         "type": "tabs",
         "children": [
           {
-            "id": "6c0b58f8a9eb9de8",
+            "id": "c99a76e35dfbb76e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5
+    "width": 335.5
   },
   "right": {
     "id": "2d70102b7bc3405c",
@@ -177,26 +177,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c0b58f8a9eb9de8",
+  "active": "c99a76e35dfbb76e",
   "lastOpenFiles": [
-    "Attachments/0_7JfOXNTEwCSpKlJc.png",
-    "Data structure & Algorithm/Time Complexity.md",
+    "Attachments/jre.png",
+    "Attachments/ChatGPT Image Apr 20, 2025, 11_18_31 AM.png",
     "Tools/JDK to APK, Core concept.md",
-    "README.md",
     "Tools",
-    "Flutter/Dart/Learning path.md",
+    "Attachments/0_7JfOXNTEwCSpKlJc.png",
+    "README.md",
     "Flutter/Dart/Function.md",
-    "Flutter/Dart/Collections.md",
-    "Flutter/Dart/Class, Object & Constructor.md",
-    "Flutter/Dart/Class modifiers.md",
-    "Flutter/Dart/Operators, Control Flow.md",
-    "Flutter/Dart/Polymorphism.md",
     "Flutter/Dart/Variables.md",
+    "Flutter/Dart/Operators, Control Flow.md",
+    "Flutter/Dart/Class modifiers.md",
+    "Flutter/Dart/Class, Object & Constructor.md",
+    "Flutter/Dart/Learning path.md",
+    "Data structure & Algorithm/Time Complexity.md",
+    "Android/Jetpack Compose/Introduction.md",
     "Android/Jetpack Compose/Side Effects.md",
+    "Android/Jetpack Compose/Jetpack compose learning topics.md",
     "Attachments/1_dWet_YU-5072Kcko7LzsuQ.jpg",
     "Attachments",
+    "1_dWet_YU-5072Kcko7LzsuQ.jpg",
+    "Flutter/Dart/Collections.md",
+    "Untitled",
     "Data structure & Algorithm",
     "Table of contents.md",
+    "Flutter/Dart/Polymorphism.md",
     "Flutter/Dart/Sealed class.md",
     "Flutter/Dart",
     "Flutter",
