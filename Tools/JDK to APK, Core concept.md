@@ -97,7 +97,43 @@ java HelloWorld
 The **Java Virtual Machine (JVM)** is the core component of the Java Runtime Environment(`JRE`) responsible for executing Java bytecode, making Java programs platform-independent. It acts as an abstract machine that translates bytecode (produced by the `javac` compiler) into native machine code specific to the underlying hardware and operating system. The JVM also manages memory, enforces security, and optimizes performance during execution.
 
 **Components of JVM**
-* Class Loader Subsystem: Loads, links and initializes `.class` files(bytecode)
+* Class Loader Subsystem: Loads .class files into memory 
+* Bytecode Verifier: Checks for security violations or invalid bytecode  
+* Execution Engine: Execute bytecode using interpreter/JIT compiler
+* Garbage Collector: Frees memory occupied by unreachable objects 
+* Runtime Memory: Allocates memory to objects and method calls 
+* Security Manager: Enforces security policies, restricting access to system sources 
 
+**How JVM Works**
+1. Invoking the `JVM`
+	* The `JVM` allocates memory for its runtime data areas(`Heap, Method area etc`)
+	* It sets up the initial thread to execute the program 
+2. Class Loading
+	* The `Bootstrap Class Loader` loads core Java class(e.g. `java.lang.System`, `java.io.PrintStream`) from the JRE's `lib` directory 
+	* The Application Class Loader loads `.class` from current directory or class path
+3. Bytecode verifier
+	* The Bytecode Verifier checks `.class` file 
+	* Valid bytecode instructions 
+	* Type safety(e.g. `println` is called on a `PrintStream` object)
+	* No illegal memory access
+4. Execution Engine 
+	* The Execution Engine executes the bytecode in the `main` method 
+	* Interpreter translate each bytecode instruction into native machine code one at a time
+	* `JIT` monitors execution to identify `hot` code(e.g frequently called methods or loops)
+	* `JIT` compiles hot bytecode into native machine code for direct execution 
+5. Memory Management
+	* `Garbage Collector` manage memory during and after execution 
+	* The `Garbage Collector` identifies and frees unreferenced objects in the Heap(e.g. temporary objects created during `println`)
+	* Algorithms(e.g. mark-and-sweep) ensures efficient memory reclamation 
+6. Program Termination 
+	 * After `main` return `JVM` shutdown 
+	 * The `Garbage Collector` frees remaining objects in the `Heap`.
+	 - The JVM releases resources (e.g., threads, file handles).
+	 - The `Security Manage`r ensures no unauthorized actions occur during shutdown.
 
+![[ChatGPT Image Apr 21, 2025, 11_51_16 PM.png]]
 
+### Step4: Interpreter
+### Step5: JIT 
+
+### Differences 
