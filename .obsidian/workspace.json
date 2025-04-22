@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "615c9313d12cb623",
+        "id": "3d513a25512c032f",
         "type": "tabs",
         "children": [
           {
-            "id": "6c0b58f8a9eb9de8",
+            "id": "c99a76e35dfbb76e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programing Language/Kotlin/Kotlin Delegations.md",
+                "file": "Tools/JDK to APK, Core concept.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kotlin Delegations"
+              "title": "JDK to APK, Core concept"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5
+    "width": 335.5
   },
   "right": {
     "id": "2d70102b7bc3405c",
@@ -177,47 +177,51 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c0b58f8a9eb9de8",
+  "active": "b106c2d694ec8868",
   "lastOpenFiles": [
-    "Tools/JDK to APK, Core concept.md",
     "Programing Language/Kotlin/Kotlin Delegations.md",
-    "Programing Language/Kotlin",
-    "Untitled",
-    "Programing Language",
-    "Attachments/ChatGPT Image Apr 21, 2025, 11_51_16 PM.png",
-    "Attachments/jre.png",
-    "Attachments/ChatGPT Image Apr 20, 2025, 11_18_31 AM.png",
-    "Attachments/0_7JfOXNTEwCSpKlJc.png",
-    "Data structure & Algorithm/Time Complexity.md",
-    "README.md",
-    "Tools",
+    "Programing Language/Dart/Variables.md",
+    "Programing Language/Dart/Polymorphism.md",
+    "Programing Language/Dart/Operators, Control Flow.md",
     "Programing Language/Dart/Learning path.md",
     "Programing Language/Dart/Function.md",
     "Programing Language/Dart/Collections.md",
     "Programing Language/Dart/Class, Object & Constructor.md",
     "Programing Language/Dart/Class modifiers.md",
-    "Programing Language/Dart/Operators, Control Flow.md",
-    "Programing Language/Dart/Polymorphism.md",
-    "Programing Language/Dart/Variables.md",
+    "Programing Language/Kotlin",
+    "Programing Language/Dart",
+    "Programing Language",
+    "Attachments/ChatGPT Image Apr 21, 2025, 11_51_16 PM.png",
+    "Attachments/jre.png",
+    "Attachments/ChatGPT Image Apr 20, 2025, 11_18_31 AM.png",
+    "Tools/JDK to APK, Core concept.md",
+    "Tools",
+    "Attachments/0_7JfOXNTEwCSpKlJc.png",
+    "README.md",
+    "Flutter/Dart/Function.md",
+    "Flutter/Dart/Variables.md",
+    "Flutter/Dart/Operators, Control Flow.md",
+    "Flutter/Dart/Class modifiers.md",
+    "Flutter/Dart/Class, Object & Constructor.md",
+    "Flutter/Dart/Learning path.md",
+    "Data structure & Algorithm/Time Complexity.md",
+    "Android/Jetpack Compose/Introduction.md",
     "Android/Jetpack Compose/Side Effects.md",
+    "Android/Jetpack Compose/Jetpack compose learning topics.md",
     "Attachments/1_dWet_YU-5072Kcko7LzsuQ.jpg",
     "Attachments",
+    "1_dWet_YU-5072Kcko7LzsuQ.jpg",
+    "Flutter/Dart/Collections.md",
+    "Untitled",
     "Data structure & Algorithm",
     "Table of contents.md",
+    "Flutter/Dart/Polymorphism.md",
     "Flutter/Dart/Sealed class.md",
-    "Programing Language/Dart",
+    "Flutter/Dart",
     "Flutter",
     "Android",
     "Jetpack Compose/Side effect.md",
-    "Jetpack Compose/Side Effect.md",
     "Jetpack Compose/Untitled.canvas",
-    "Untitled.md",
-    "Jetpack Compose.md",
-    "Untitled.canvas",
-    "Welcome.md",
-    "Android/Jetpack Compose",
-    "2024-10-21.md",
-    "declarative UI.md",
-    "create a link.md"
+    "Untitled.canvas"
   ]
 }

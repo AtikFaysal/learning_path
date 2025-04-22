@@ -137,3 +137,6 @@ The **Java Virtual Machine (JVM)** is the core component of the Java Runtime Env
 ### Step5: JIT 
 
 ### Differences 
+
+### Behind the scene of generate apk file 
+
