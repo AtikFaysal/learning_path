@@ -104,7 +104,7 @@ The **Java Virtual Machine (JVM)** is the core component of the Java Runtime Env
 * Runtime Memory: Allocates memory to objects and method calls 
 * Security Manager: Enforces security policies, restricting access to system sources 
 
-**How JVM Works**
+**How Does JVM Work**
 1. Invoking the `JVM`
 	* The `JVM` allocates memory for its runtime data areas(`Heap, Method area etc`)
 	* It sets up the initial thread to execute the program 
@@ -134,9 +134,35 @@ The **Java Virtual Machine (JVM)** is the core component of the Java Runtime Env
 ![[ChatGPT Image Apr 21, 2025, 11_51_16 PM.png]]
 
 ### Step4: Interpreter
+> An interpreter is a program that executes code written in a high-level programming language by translating and running it line-by-line or statement-by-statement, without requiring a separate compilation step. Unlike a compiler, which translates the entire program into machine code before execution, an interpreter processes the code dynamically, making it suitable for scripting, interactive environments, and rapid prototyping.
+
+**Key Features of Intercepters**
+* Line-by-line execution: Executes one statement at a time during runtime 
+* No separate compilation: Code is not translated into machine code ahead of time 
+* Slower than compiler: Because of it interprets during every run
+* Better debugging: Errors are easier to trace as they're caught as the code is read
+* Dynamic typing: Often used in dynamically-typed languages like python and Javascript 
+
+**How does Interpreter work**
+* **Source code input:** The interpreter receives the source code written  in high-level programing language(e.g. Java, Python, JavaScript or Ruby). This code is typically human-readable and consists of instructions like variable declarations, loops or functions calls 
+* **Lexical analysis:** The interpreter's `Lexer` breaks the source code into a sequence of tokens. Tokens are the smallest meaningful units, such as keywords `if`, `while`, identifiers (`x`, `myFunction`)
+* **Syntax analysis:** The parser takes the token stream and constructs the `Abstract Syntax Tree(AST)`, which represents the hierarchical structure of the code according to the language's grammar rules. The parser checks for syntax errors (e.g., missing parentheses or incorrect keywords). If the syntax is valid, the `AST` captures the program’s structure, such as expressions, statements, or blocks.
+* **Semantic Analysis:** The interpreter performs semantic checks to ensure the code makes logical sense. This includes verifying variable declarations, type compatibility, and scope rules. For example, it checks if x is defined before use or if 5 + "hello" is a valid operation in the language. Some interpreters maintain a symbol table to track variables and their values or types.
+* **Intermediate Representation (Optional):** Some interpreters (e.g., Python, JavaScript) convert the AST into an intermediate representation (IR), like bytecode, for efficiency. Bytecode is a low-level, platform-independent representation of the program that is easier to execute than raw `AST`. Example, Python’s interpreter compiles source code to bytecode (stored in .pyc files) before execution.
+* **Execution**: - The interpreter’s execution engine processes the AST or bytecode and performs the corresponding operations. This involves:
+    - **Evaluating expressions**: Computing results like 5 + 3 = 8.
+    - **Managing memory**: Allocating space for variables and objects.
+    - **Handling control flow**: Executing loops, conditionals, or function calls.
+    - **Interacting with the runtime environment**: Accessing system resources, libraries, or I/O.
+- **Output or Interaction**: The interpreter produces output (e.g., printing to the console) or updates the program’s state (e.g., modifying variables). In interactive environments like Python’s REPL, it waits for the next input. If an error occurs (e.g., runtime exception), the interpreter halts and reports it.
+- **Runtime Environment**: The interpreter maintains a runtime environment, including:
+	- **Stack**: For function calls and local variables.
+	- **Heap**: For dynamic memory allocation (e.g., objects, arrays).
+	- **Standard Library**: For built-in functions and modules.
+![[ChatGPT Image Apr 23, 2025, 05_41_21 PM.png]]
 ### Step5: JIT 
 
 ### Differences 
 
-### Behind the scene of generate apk file 
+### Behind the scene of apk file generation
 
