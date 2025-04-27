@@ -174,7 +174,40 @@ The JIT compiler is key to Java’s performance, enabling it to rival native app
 **How does JIT Compiler work?**
 The JIT compiler operates dynamically during program execution, compiling bytecode into native machine code based on runtime profiling. It works in tandem with the JVM’s interpreter and uses a **hotspot** approach to focus on frequently executed code. Below is a step-by-step explanation of the process.
 
+1. **Program Invocation**:
+	- The JVM starts when you run a Java program (e.g., java HelloWorld).
+	- The JVM loads the .class file, verifies its bytecode, and begins execution.
+2. **Initial Execution with Interpreter**:
+	- The JVM’s **Interpreter** executes bytecode by translating each instruction into native machine code one at a time.
+    - This provides quick startup but is slower for repeated execution.
+3. **Profiling and Hotspot Detection**:
+	- The JIT compiler monitors the running program to identify **hotspots**—code segments (methods, loops) executed frequently.
+	- It collects runtime data, such as:
+    - How often a method is called.
+    - Which code paths are taken most frequently.
+    - Variable usage patterns.
+	- The JVM uses counters to track method invocations and loop iterations.
+4. **Compilation of Hotspots**:
+	- When a method or loop exceeds a threshold (e.g., called 10,000 times), the JIT compiler compiles its bytecode into native machine code.
+    - The compilation is performed at different **tiers** (in modern JVMs like HotSpot):
+	    - **C1 Compiler** (Client): Fast compilation with basic optimizations for quick results.
+	    - **C2 Compiler** (Server): Slower, more aggressive optimizations for maximum performance.
+	    - **Tiered Compilation**: Combines C1 and C2, starting with C1 and later applying C2 for heavily used code.
+5. **Optimization**:
+	- The JIT compiler applies optimizations based on runtime data, including:
+	    - **Inlining**: Replacing method calls with the method’s body to reduce overhead (e.g., inlining a small println call).
+	    - **Loop Unrolling**: Reducing loop overhead by duplicating loop body code.
+	    - **Dead Code Elimination**: Removing unreachable or unused code.
+	    - **Constant Folding**: Precomputing constant expressions (e.g., 2 + 3 becomes 5).
+	    - **Branch Prediction**: Optimizing conditional branches based on observed execution paths.
+	    - **Escape Analysis**: Determining if objects can be allocated on the stack instead of the heap to reduce garbage collection.
+	- These optimizations are speculative, meaning they assume certain conditions (e.g., a method is always called with the same type). The JVM can **deoptimize** if assumptions fail.
+6. **Execution of Native Code**:
+	- The compiled native code is stored in the JVM’s **Code Cache**.
+	- Subsequent calls to the compiled method execute the native code directly, bypassing the interpreter.
+	- If the program’s behavior changes (e.g., a new class is loaded), the JVM may deoptimize and revert to interpretation or recompile with updated assumptions.
 
+![[java-just-in-time-jit-compiler-overview.png]]
 ### Differences 
 **JVM VS JDK**
 **JVM VS JRE**
