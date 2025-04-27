@@ -161,8 +161,23 @@ The **Java Virtual Machine (JVM)** is the core component of the Java Runtime Env
 	- **Standard Library**: For built-in functions and modules.
 ![[ChatGPT Image Apr 23, 2025, 05_41_21 PM.png]]
 ### Step5: JIT 
+>The **Just-In-Time (JIT) Compiler** is a critical component of the Java Virtual Machine (JVM) that dynamically compiles Java bytecode into native machine code during a program's runtime to improve performance. Unlike traditional compilers that generate machine code before execution (ahead-of-time compilation), the JIT compiler performs compilation on-the-fly, optimizing code based on runtime behavior. This allows Java programs to combine the portability of bytecode with execution speeds approaching those of natively compiled languages like C++.
+
+**Why JIT needed**
+The JIT compiler is part of the JVM’s **Execution Engine** and serves to:
+- **Translate Bytecode to Native Code**: Converts platform-independent bytecode into machine-specific instructions that the underlying hardware can execute directly.
+- **Optimize Performance**: Applies optimizations based on runtime data, such as frequently executed code paths (hotspots), to reduce execution time.
+- **Balance Startup and Performance**: Works alongside the JVM’s interpreter to provide quick startup (via interpretation) and optimized execution (via compilation).
+
+The JIT compiler is key to Java’s performance, enabling it to rival native applications by generating optimized machine code tailored to the specific runtime environment.
+
+**How does JIT Compiler work?**
+The JIT compiler operates dynamically during program execution, compiling bytecode into native machine code based on runtime profiling. It works in tandem with the JVM’s interpreter and uses a **hotspot** approach to focus on frequently executed code. Below is a step-by-step explanation of the process.
+
 
 ### Differences 
-
+**JVM VS JDK**
+**JVM VS JRE**
+**Interpreter VS Compiler**
 ### Behind the scene of apk file generation
 
