@@ -210,7 +210,48 @@ The JIT compiler operates dynamically during program execution, compiling byteco
 ![[java-just-in-time-jit-compiler-overview.png]]
 ### Differences 
 **JVM VS JDK**
+
+| **Aspect**           | **JVM (Java Virtual Machine)**                                                                                                                                    | **JDK (Java Development Kit)**                                                                                                                               |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Definition**       | A virtual machine that executes Java bytecode, providing a platform-independent runtime environment.                                                              | A software development kit that provides tools, libraries, and the JRE for developing and running Java applications.                                         |
+| **Primary Role**     | Executes compiled Java bytecode (.class files) by translating it to native machine code.                                                                          | Enables developers to write, compile, debug, and run Java programs.                                                                                          |
+| **Components**       | - Class Loader<br>- Bytecode Verifier<br>- Execution Engine (Interpreter, JIT Compiler)<br>- Garbage Collector<br>- Runtime Data Areas (Heap, Stack, Method Area) | - JRE (includes JVM and core libraries)<br>- javac (compiler)<br>- java (runtime launcher)<br>- Tools (e.g., javadoc, jar, jdb)<br>- Standard Java libraries |
+| **Scope**            | Runtime environment only; does not include development tools.                                                                                                     | Development and runtime environment; includes JVM, JRE, and development tools.                                                                               |
+| **Usage**            | Used to run Java programs (e.g., java HelloWorld).                                                                                                                | Used to develop (write, compile) and run Java programs (e.g., javac HelloWorld.java, java HelloWorld).                                                       |
+| **Dependency**       | Part of the JRE, which is included in the JDK.                                                                                                                    | Includes the JRE (and thus the JVM) as a subset.                                                                                                             |
+| **Installation**     | Not installed standalone; comes with JRE or JDK.                                                                                                                  | Installed by developers; includes JRE and JVM.                                                                                                               |
+| **Example Use Case** | Executes HelloWorld.class to print Hello World!.                                                                                                                  | Compiles HelloWorld.java to HelloWorld.class using javac and runs it using java.                                                                             |
+| **Target Audience**  | End-users running Java applications (via JRE).                                                                                                                    | Developers building Java applications.                                                                                                                       |
+| **Size**             | Smaller, as it’s a subset of JRE/JDK (focuses on execution).                                                                                                      | Larger, as it includes JVM, JRE, and development tools.                                                                                                      |
+
 **JVM VS JRE**
+
+|**Aspect**|**JVM (Java Virtual Machine)**|**JRE (Java Runtime Environment)**|
+|---|---|---|
+|**Definition**|A virtual machine that executes Java bytecode.|A package that includes the JVM, libraries, and runtime components to run Java applications.|
+|**Function**|Runs Java code by converting bytecode to machine instructions.|Provides the complete environment (JVM + libraries) to run Java programs.|
+|**Components**|Includes interpreter, JIT compiler, garbage collector, etc.|Includes JVM, Java Class Library, APIs, and other runtime files.|
+|**Scope**|Core execution engine, a subset of JRE.|Broader package containing JVM and additional resources.|
+|**Usage**|Executes bytecode; not directly installed alone.|Installed to run Java applications on a system.|
+|**Standalone**|Not standalone; part of JRE or JDK.|Standalone package for running Java apps.|
+|**Example Analogy**|Engine of a car.|Entire car (engine + fuel system + other components).|
+
 **Interpreter VS Compiler**
+
+|Aspect|Interpreter|Compiler|
+|---|---|---|
+|**Definition**|Translates and executes source code line-by-line (or statement-by-statement) at runtime.|Translates the entire source code into machine/target code before execution.|
+|**Translation Unit**|One statement or line at a time.|The whole program (or large modules) as a single translation unit.|
+|**Output**|No standalone output file; executes directly from source or intermediate representation.|Generates an executable or object file (machine code or bytecode).|
+|**Execution Process**|Fetch → Decode → Execute for each line; repeats until program ends.|Full translation first, then a separate execution phase runs the produced binary.|
+|**Error Detection**|Stops and reports errors as soon as it hits them during execution.|Reports all syntax/semantic errors during compilation; execution only if compilation succeeds.|
+|**Performance**|Generally slower execution (overhead of on-the-fly translation).|Typically faster at runtime (no translation overhead once compiled).|
+|**Memory Usage**|Lower memory footprint for translation, but keeps source in memory.|May require more memory for compiler data structures; runtime uses only compiled code.|
+|**Platform Dependency**|Needs the interpreter installed on each platform.|Generated executable is platform-specific; needs recompilation for other platforms.|
+|**Debugging**|Easier to debug interactively (can test snippets quickly).|Often uses separate debugging tools; harder to test partial changes without full recompile.|
+|**Examples**|Python, Ruby, JavaScript, MATLAB|C, C++, Rust, Go; Java/Kotlin compile to bytecode, then interpreted/​JIT by JVM.|
+|**Typical Use Cases**|Scripting, rapid prototyping, educational tools, REPL environments.|System software, performance-critical applications, large codebases.|
 ### Behind the scene of apk file generation
+
+
 
